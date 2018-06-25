@@ -43,7 +43,7 @@ export default {
   methods: {
     addSmoothie() {
       if (this.title) {
-        this.feebback = null
+        this.feedback = null
         this.slug = slugify(this.title, {
           replacement: '-',
           remove: /[$*_+~.()'"!\-:@]/g,
@@ -73,7 +73,7 @@ export default {
     },
     deleteIng(index) {
       this.ingredients = this.ingredients.filter( ing => {
-        ing[index] != index
+        return this.ingredients[index] != ing
       })
     }
   }
